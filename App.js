@@ -11,7 +11,7 @@ import {Text, View, SafeAreaView} from 'react-native';
 const App: () => Node = () => {
   return (
     <SafeAreaView>
-      <Text>React Native Code Test</Text>
+      <Text>React Native Code Test </Text>
     </SafeAreaView>
   );
 };
