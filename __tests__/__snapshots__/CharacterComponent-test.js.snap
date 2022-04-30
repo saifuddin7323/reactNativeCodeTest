@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "padding": 8,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "skyblue",
+              "fontWeight": "bold",
+            },
+            undefined,
+          ]
+        }
+      >
+        Name
+        :
+         
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "black",
+              "flex": 1,
+              "flexWrap": "wrap",
+              "fontWeight": "bold",
+            },
+            undefined,
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "skyblue",
+              "fontWeight": "bold",
+            },
+            undefined,
+          ]
+        }
+      >
+        Title
+        :
+         
+      </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "black",
+              "flex": 1,
+              "flexWrap": "wrap",
+              "fontWeight": "bold",
+            },
+            undefined,
+          ]
+        }
+      />
+    </View>
+  </View>
+  <Image
+    source={
+      Object {
+        "uri": undefined,
+      }
+    }
+    style={
+      Array [
+        Object {
+          "borderRadius": 40,
+          "height": 80,
+          "width": 80,
+        },
+        undefined,
+      ]
+    }
+  />
+</View>
+`;

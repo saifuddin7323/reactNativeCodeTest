@@ -4,14 +4,46 @@
  * @flow strict-local
  */
 
-import React from 'react';
-import type {Node} from 'react';
-import {Text, View, SafeAreaView} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {SafeAreaView, StyleSheet, SectionList} from 'react-native';
+import {CharacterComponent, Header, SectionHeader} from './src/components';
+import {getCharacterData} from './src/networking';
 
-const App: () => Node = () => {
+const styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+    backgroundColor: 'skyblue',
+  },
+  sectionListStyle: {
+    backgroundColor: 'white',
+  },
+});
+
+const App = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setSectionListData();
+  }, []);
+
+  const setSectionListData = async () => {
+    const characterSectionList = await getCharacterData();
+    setData(characterSectionList);
+  };
+
   return (
-    <SafeAreaView>
-      <Text>React Native Code Test </Text>
+    <SafeAreaView style={styles.mainContainer}>
+      <SectionList
+        contentContainerStyle={styles.sectionListStyle}
+        sections={data}
+        ListHeaderComponent={Header}
+        keyExtractor={(item, index) => item?.id + index}
+        renderItem={({item}) => <CharacterComponent {...item} />}
+        renderSectionHeader={({section: {title}}) => {
+          const length = data?.find(item => item?.title === title);
+          return <SectionHeader title={title} length={length?.data?.length} />;
+        }}
+      />
     </SafeAreaView>
   );
 };
